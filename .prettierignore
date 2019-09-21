@@ -1,0 +1,4 @@
+packages/slack-clone-client/dist
+packages/slack-clone-client/node_modules
+
+packages/slack-clone-server/node_modules
