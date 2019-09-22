@@ -1,12 +1,15 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { createGlobalStyle } from 'styled-components';
+import { ApolloProvider } from 'react-apollo-hooks';
 
 import { AppRouter } from '../../router';
+import { apolloClient } from '../../config/apolloConfig';
 
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
   html, body, main, #root {
     margin: 0;
     padding: 0;
@@ -15,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lato';
     font-weight: 400;
   }
+
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+  }
   
   input, textarea, button {
     font-family: 'Lato';
@@ -22,8 +30,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const App: React.FC = () => (
-  <Fragment>
+  <ApolloProvider client={apolloClient}>
     <GlobalStyle />
     <AppRouter />
-  </Fragment>
+  </ApolloProvider>
 );

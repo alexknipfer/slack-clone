@@ -1,15 +1,19 @@
 import React from 'react';
 
 import { Card } from '../../components/Card';
-import { Input } from '../../components/Input';
-import { LoginContainer, CardContainer } from './style';
+import { LoginContainer, CardContainer, CardContent } from './style';
+import { LoginForm } from './LoginForm';
+import { Space } from '../../style';
 
 export const Login: React.FC = () => (
   <LoginContainer>
     <CardContainer>
       <Card center>
-        <h1>Sign in</h1>
-        <Input placeholder="Email" />
+        <CardContent>
+          <h1>Sign in</h1>
+          <Space height={15} />
+          <LoginForm />
+        </CardContent>
       </Card>
     </CardContainer>
   </LoginContainer>

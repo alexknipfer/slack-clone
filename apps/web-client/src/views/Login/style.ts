@@ -11,3 +11,8 @@ export const LoginContainer = styled.div`
 export const CardContainer = styled.div`
   width: 40%;
 `;
+
+export const CardContent = styled.div`
+  width: 70%;
+  padding: 32px;
+`;
