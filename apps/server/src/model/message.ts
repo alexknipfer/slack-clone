@@ -1,4 +1,5 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Model } from 'mongoose';
+import { IMessage } from '@slack-clone/data';
 
 const MessageSchema = new Schema(
   {
@@ -19,7 +20,7 @@ const MessageSchema = new Schema(
 );
 
 MessageSchema.set('toJSON', {
-  transform(doc) {
+  transform(doc: IMessage) {
     return {
       id: doc._id.toString(),
       text: doc.text,
@@ -31,4 +32,7 @@ MessageSchema.set('toJSON', {
   }
 });
 
-export const Message = model('Message', MessageSchema);
+export const Message: Model<IMessage> = model<IMessage>(
+  'Message',
+  MessageSchema
+);

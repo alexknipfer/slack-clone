@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import { AuthenticationError } from 'apollo-server';
 
 import { User } from '../../model/user';
+import { environment } from '../../environments/environment';
 
 interface LoginArgs {
   email: string;
@@ -26,7 +27,7 @@ export const login = async (obj: {}, args: LoginArgs) => {
 
   const token = jwt.sign(
     { id: foundUser.id, username: foundUser.email },
-    process.env.JWT_SIGNING_KEY,
+    environment.jwtSigningKey,
     { expiresIn: '30d' }
   );
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import * as Yup from 'yup';
-import { Form, useFormik } from 'formik';
+import { useFormik } from 'formik';
 
 import { EMAIL_REGEX } from '../../../util/regex';
 import { Input } from '../../../components/Input';

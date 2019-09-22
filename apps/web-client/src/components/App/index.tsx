@@ -1,9 +1,10 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import { ApolloProvider } from 'react-apollo-hooks';
+import { ApolloProvider } from '@apollo/react-hooks';
 
 import { AppRouter } from '../../router';
 import { apolloClient } from '../../config/apolloConfig';
+import { AuthProvider } from '../../stores/auth/provider';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -31,7 +32,9 @@ const GlobalStyle = createGlobalStyle`
 
 export const App: React.FC = () => (
   <ApolloProvider client={apolloClient}>
-    <GlobalStyle />
-    <AppRouter />
+    <AuthProvider>
+      <GlobalStyle />
+      <AppRouter />
+    </AuthProvider>
   </ApolloProvider>
 );
