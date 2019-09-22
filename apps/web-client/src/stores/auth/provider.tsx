@@ -3,8 +3,7 @@ import { useMutation } from '@apollo/react-hooks';
 
 import { LOGIN_MUTATION } from './mutations';
 import { AuthContext } from './context';
-
-const LOCAL_STORAGE_TOKEN_KEY = 'token';
+import { LOCAL_STORAGE_TOKEN_KEY } from '../../util/localStorageKeys';
 
 export const AuthProvider: React.FC = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState(false);
