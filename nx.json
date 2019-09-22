@@ -13,6 +13,12 @@
     },
     "web-client-e2e": {
       "tags": []
+    },
+    "server": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
     }
   }
 }
