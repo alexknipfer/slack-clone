@@ -1,0 +1,24 @@
+{
+  "npmScope": "slack-clone",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "web-client": {
+      "tags": []
+    },
+    "web-client-e2e": {
+      "tags": []
+    },
+    "server": {
+      "tags": []
+    },
+    "data": {
+      "tags": []
+    }
+  }
+}
