@@ -14,4 +14,7 @@ export const user = gql`
     register(email: String!, password: String!, name: String): User!
     login(email: String!, password: String!): UserCredentials!
   }
+  extend type Query {
+    getUser(token: String!): User!
+  }
 `;

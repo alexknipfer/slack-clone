@@ -28,7 +28,7 @@ export const login = async (obj: {}, args: LoginArgs) => {
   const token = jwt.sign(
     { id: foundUser.id, username: foundUser.email },
     environment.jwtSigningKey,
-    { expiresIn: '30d' }
+    { expiresIn: '30d', issuer: 'slack-clone-server', algorithm: 'HS256' }
   );
 
   return {
