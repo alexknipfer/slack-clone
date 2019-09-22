@@ -1,5 +1,14 @@
-import { Schema, model, Model } from 'mongoose';
-import { IUser } from '@slack-clone/data';
+import { Schema, model, Model, Types, Document } from 'mongoose';
+
+export interface IUser extends Document {
+  _id: Types.ObjectId;
+  id: string;
+  email: string;
+  name: string;
+  password: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 const UserSchema = new Schema(
   {

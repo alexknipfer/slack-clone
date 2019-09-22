@@ -1,5 +1,14 @@
-import { Schema, model, Model } from 'mongoose';
-import { IMessage } from '@slack-clone/data';
+import { Schema, model, Model, Types, Document } from 'mongoose';
+
+export interface IMessage extends Document {
+  _id: Types.ObjectId;
+  id: string;
+  text: string;
+  userId: string;
+  channelId: string;
+  updatedAt: Date;
+  createdAt: Date;
+}
 
 const MessageSchema = new Schema(
   {

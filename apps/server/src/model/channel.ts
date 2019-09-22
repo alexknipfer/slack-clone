@@ -1,5 +1,11 @@
-import { Schema, model, Model } from 'mongoose';
-import { IChannel } from '@slack-clone/data';
+import { Schema, model, Model, Document } from 'mongoose';
+
+export interface IChannel extends Document {
+  name: string;
+  public: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 const ChannelSchema = new Schema(
   {
